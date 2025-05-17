@@ -1,4 +1,4 @@
-package Lab;
+package lab;
 
 import java.util.ArrayDeque;
 import java.util.Scanner;
