@@ -13,10 +13,16 @@ public class Ex05_BalancedParentheses {
             if (c == '(' || c == '{' || c == '[') {
                 stack.push(c);
             } else if (c == ')' || c == '}' || c == ']') {
-                char previous = stack.pop();
-                if (    !((previous == '(' && c == ')') ||
-                        (previous == '{' && c == '}') ||
-                        (previous == '[' && c == ']') )) {
+                char previous = ' ';
+                if (!stack.isEmpty()) {
+                    previous = stack.pop();
+                    if (    !((previous == '(' && c == ')') ||
+                            (previous == '{' && c == '}') ||
+                            (previous == '[' && c == ']') )) {
+                        isBalanced = false;
+                        break;
+                    }
+                } else {
                     isBalanced = false;
                     break;
                 }
