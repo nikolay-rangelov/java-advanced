@@ -1,8 +1,6 @@
 package exercises;
 
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.lang.System.in;
 
@@ -14,12 +12,18 @@ public class Ex03_MaximumElement_v2 {
         for (int i = 0; i < numberOfCommands; i++) {
             String command = sc.nextLine().strip();
             if(command.equals("2")) {
-
+                //delete the element from the stack
+                if (!stack.isEmpty()) {
+                    stack.pop();
+                }
             } else if (command.equals("3")) {
-
+                if (!stack.isEmpty()) {
+                    System.out.println(Collections.max(stack));
+                }
             } else {
-                int num = Integer.parseInt(Arrays.stream(command.split("\\s+")[1]);
-                int numberToPush = Integer.parseInt(command.split("\\s+")[1]);
+                // push element into the stack
+                int numToPush = Integer.parseInt(command.split("\\s+")[1]);
+                stack.push(numToPush);
             }
         }
     }
